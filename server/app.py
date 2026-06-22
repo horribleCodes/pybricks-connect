@@ -13,7 +13,7 @@ import argparse
 # App infos
 _NAME = "PYBRICKS CONNECT"
 _VERSION = "0.1.0"
-_TITLE_PATH = "title.txt"
+_TITLE_PATH = "server_data/title.txt"
 
 # Environment variables
 _HUB_NAME = "Pybricks Hub"  # Name of the hub to connect to. Used to discover the device with BT.
