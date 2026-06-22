@@ -1,0 +1,5 @@
+instructs:
+  - id: TEST
+    port: 0
+    function: motor_run_angle
+    parameters: [1080, -1080]

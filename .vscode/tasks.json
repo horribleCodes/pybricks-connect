@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "docker-compose: build",
+            "type": "shell",
+            "command": "docker-compose build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "docker-compose: down",
+            "type": "shell",
+            "command": "docker-compose down"
+        },
+        {
+            "label": "flash controller hub",
+            "type": "shell",
+            "command": "uv run pybricksdev run ble ./hub/hub_controller.py",
+            "presentation": {
+                "close": true,
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        }
+    ]
+}
