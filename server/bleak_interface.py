@@ -3,9 +3,10 @@ Module to interface with the Pybricks Hub using the Bleak library.
 Used to connect/disconnect to the hub, send messages, and receive responses.
 """
 
-from asyncio import Event, Lock
 import re
-from bleak import BleakScanner, BleakClient
+from asyncio import Event, Lock
+
+from bleak import BleakClient, BleakScanner
 
 # UUIDs used by BLE devices
 _PYBRICKS_COMMAND_EVENT_CHAR_UUID = "c5f50002-8280-46da-89f4-6d8051e4aeef"

@@ -1,12 +1,12 @@
 from hub_commands import execute_command
-from hub_tools import ENQ, print_binary, read_indefinite, STX, EM
 from hub_devices import setup_devices
+from hub_tools import EM, ENQ, STX, print_binary, read_indefinite
 from pybricks.hubs import InventorHub
-from pybricks.pupdevices import Motor, UltrasonicSensor, ColorSensor
 from pybricks.parameters import Port
+from pybricks.pupdevices import ColorSensor, Motor, UltrasonicSensor
 from pybricks.tools import wait
-from usys import stdin
 from uselect import poll
+from usys import stdin
 
 DEVICES: dict[Port, Motor | UltrasonicSensor | ColorSensor] = {}
 HUB: InventorHub = None
