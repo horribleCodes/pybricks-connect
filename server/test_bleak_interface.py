@@ -1,5 +1,6 @@
-from bleak_interface import BleakInterface
 import asyncio
+
+from bleak_interface import BleakInterface
 
 
 async def _get_devices(interface: BleakInterface):

@@ -1,7 +1,8 @@
 import asyncio
-from enum import Enum
-from bleak_interface import BleakInterface
 from colorsys import rgb_to_hsv
+from enum import Enum
+
+from bleak_interface import BleakInterface
 from instruct_config import load_instructs
 from models import InstructDefinition
 
@@ -321,7 +322,7 @@ class Controller:
     def _validate_port(self, port):
         try:
             port = int(port)
-            if port not in range(0, 6):
+            if port not in range(6):
                 raise ValueError
         except ValueError:
             raise ValueError("Invalid port number: %s" % port)
@@ -334,9 +335,7 @@ class Controller:
         except IndexError:
             should_update = True
         else:
-            if queue_item.startswith(_UPDATE_KEY):
-                should_update = False
-            elif queue_item == State.EXIT:
+            if queue_item.startswith(_UPDATE_KEY) or queue_item == State.EXIT:
                 should_update = False
         finally:
             return should_update
