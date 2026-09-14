@@ -4,11 +4,13 @@ This module contains the main entry point for the application and sets up the
 controller module managing the BLE connection interface.
 """
 
-import asyncio
-from controller import Controller, controller_runner
-from server import Server, server_runner
-from tools import print_kwargs, print_spacer, print_tasks, print_title
 import argparse
+import asyncio
+
+from controller import Controller, controller_runner
+from tools import print_kwargs, print_spacer, print_tasks, print_title
+
+from server import Server, server_runner
 
 # App infos
 _NAME = "PYBRICKS CONNECT"
