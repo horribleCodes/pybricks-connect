@@ -1,8 +1,8 @@
 from pathlib import Path
 
 import yaml
-
 from models import InstructDefinition
+
 from server_data.hub_commands import _VALID_COMMANDS
 
 
@@ -26,7 +26,7 @@ def load_instructs(
     instructs: dict[str, InstructDefinition] = {}
     for entry in instructs_raw:
         instruct = InstructDefinition(**entry)
-        if instruct.port not in range(0, 6):
+        if instruct.port not in range(6):
             raise ValueError(
                 "Invalid port for instruct %s: %s" % (instruct.id, instruct.port)
             )

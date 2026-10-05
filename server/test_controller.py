@@ -1,7 +1,7 @@
 import asyncio
 from pathlib import Path
 
-from controller import Controller, controller_runner, _UPDATE_KEY
+from controller import _UPDATE_KEY, Controller, controller_runner
 
 _INSTRUCTS_CONFIG = (
     Path(__file__).resolve().parent.parent / "server_data" / "instructs.yml"
