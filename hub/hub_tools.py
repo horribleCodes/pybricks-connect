@@ -50,7 +50,7 @@ def convert_to_bytes(data):
 
 
 DEBUG_CONTROL_CHARS = {
-    key: convert_to_bytes(key) + CONTROL_CHARS[key] for key in CONTROL_CHARS.keys()
+    key: convert_to_bytes(key) + CONTROL_CHARS[key] for key in CONTROL_CHARS
 }
 
 
