@@ -1,39 +1,38 @@
+from hub_actions import (
+    change_light,
+    get_angle,
+    get_distance,
+    get_hsv,
+    run_angle,
+    run_target,
+    run_time,
+)
+from hub_devices import (
+    filter_devices_by_type,
+    get_allowed_devices,
+    get_device,
+    read_port,
+)
 from hub_tools import (
-    ETX,
     ESC,
+    ETX,
     FS,
+    NAK,
+    NUM_DECIMAL,
+    NUM_DECSIG,
+    NUM_NATURAL,
     STX,
+    SUB,
     convert_to_bytes,
     convert_to_float,
     convert_to_int,
     get_name_of_object,
-    read_parameters,
     print_binary,
-    NUM_NATURAL,
-    NUM_DECIMAL,
-    NUM_DECSIG,
-    SUB,
-    NAK,
-)
-from hub_actions import (
-    get_angle,
-    run_angle,
-    run_target,
-    run_time,
-    change_light,
-    get_distance,
-    get_hsv,
-)
-from hub_devices import (
-    get_device,
-    read_port,
-    get_allowed_devices,
-    filter_devices_by_type,
+    read_parameters,
 )
 from pybricks.hubs import InventorHub
-from pybricks.pupdevices import Motor, UltrasonicSensor, ColorSensor
+from pybricks.pupdevices import ColorSensor, Motor, UltrasonicSensor
 from pybricks.tools import wait
-
 
 _RPS = 360
 _MAX_SPEED = 2 * _RPS
