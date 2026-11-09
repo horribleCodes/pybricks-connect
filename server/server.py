@@ -1,6 +1,7 @@
 import datetime
-from aiohttp import web, ClientSession
-from aiohttp.web import json_response, HTTPBadRequest, HTTPServerError, Request
+
+from aiohttp import ClientSession, web
+from aiohttp.web import HTTPBadRequest, HTTPServerError, Request, json_response
 from controller import Controller
 from models import InstructRequest
 
@@ -184,13 +185,15 @@ if __name__ == "__main__":
 
     async def _request_runner(server: Server, method: str, path: str, data: dict):
         await asyncio.sleep(1)
-        async with ClientSession() as session:
-            async with session.request(
+        async with (
+            ClientSession() as session,
+            session.request(
                 method, f"http://localhost:{server._port}{path}", json=data
-            ) as response:
-                print(f"\nResponse from {method} request to {path}: {response.status}")
-                print(f"Response type: {response.content_type}")
-                print(await response.text())
+            ) as response,
+        ):
+            print(f"\nResponse from {method} request to {path}: {response.status}")
+            print(f"Response type: {response.content_type}")
+            print(await response.text())
 
     def get_requests(_server: Server):
         # TODO: Fix "/command/{argument}" type of routes to work with the test runner.
