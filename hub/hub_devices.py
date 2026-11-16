@@ -1,8 +1,7 @@
 from hub_tools import get_name_of_object, read_indefinite
-from pybricks.pupdevices import Motor, UltrasonicSensor, ColorSensor
 from pybricks.parameters import Port, Stop
+from pybricks.pupdevices import ColorSensor, Motor, UltrasonicSensor
 from pybricks.tools import multitask, run_task
-
 
 _ALLOWED_DEVICES: list = [Motor, UltrasonicSensor, ColorSensor]
 _PORT_CHARS: bytearray = b"012345ABCDEFabcdef"
@@ -52,7 +51,7 @@ def add_device(port: Port, devices: dict, required_device, verbose=False, quiet=
     except Exception as e:
         message = f"Failed to add {required_name} at port {port}"
         if verbose:
-            message += f": {str(e)}"
+            message += f": {e!s}"
         else:
             message += "."
 
