@@ -1,7 +1,7 @@
-from pybricks.hubs import InventorHub
-from pybricks.parameters import Stop, Color
-from pybricks.pupdevices import Motor, UltrasonicSensor, ColorSensor
 from hub_tools import abs_deg, clamp
+from pybricks.hubs import InventorHub
+from pybricks.parameters import Color, Stop
+from pybricks.pupdevices import ColorSensor, Motor, UltrasonicSensor
 
 
 def run_time(motor: Motor, speed: float, time: float):
